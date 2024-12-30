@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;800&family=VT323&display=swap');
+
+/* 
+
+align-content: center; these two will only work if the container is greater than the container grid lines, because with those two, the whole container 'with its grid lines' moves not only the elements    
+justify-content: center;   the only difference between them is the align items works without setting the display to grid or flex
+
+
+*/
+
+
+body {
+  margin: 30px;
+  font-family: "Poppins";
+}
+
+.container{
+  display: grid;
+  margin: 0 auto;
+  background-color: #eee;
+  max-width: 900px;
+  grid-template-columns: repeat(6,1fr);
+  grid-template-rows: 100px 200px 100px;
+  justify-items: end; /* in the normal situation the default of these is set to strech, which is why you see the item which has the backgrount #ccc covers the container background which is #eee */
+  align-items: center;  
+  /* height: 600px;
+  width: 1000px; */
+/* align-content: center;    
+justify-content: center; */
+
+}
+
+.container > div{ /* > means any direct descendent of the parent container*/
+  background: #ccc;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #777;
+}
+
+.container > div:nth-child(1){
+  grid-column: 1/span 2;
+  /* align-self: start;
+  justify-self: start; */
+}
+.container > div:nth-child(2){
+  grid-column: span 3;
+}
+.container > div:nth-child(3){
+  grid-column: span 1;
+}
+.container > div:nth-child(4){
+  grid-column: 2/6;
+}
+.container > div:nth-child(5){
+  grid-column: 1/4;
+}
+.container > div:nth-child(6){
+  grid-column: span 3;
+} 
