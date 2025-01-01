@@ -5,3 +5,95 @@ body {
   font-family: "Poppins";
   background: #f7f7f7;
 }
+
+
+
+header{
+background: #fff;
+padding: 10px;
+}
+
+nav{
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  text-align: center;
+  align-items: center;
+}
+
+nav a{
+  text-decoration: none;
+  color: #333;
+}
+nav h1{
+  text-transform: uppercase;
+  line-height: 1em;
+}
+nav h1 div:first-child{
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+nav h1 div:last-child{
+font-weight: 400;
+}
+
+main{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 250px;
+  max-width: 1200px;
+  margin: 60 auto;
+  padding: 20px;
+  gap: 30px;
+}
+
+main div{
+  overflow: hidden;
+  background: white;
+  border: 16px solid #fff ;
+  border-radius: 6px;
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.05);
+  }
+  
+  main div img{
+    height: 100%;
+    min-width: 100%; 
+    /* of its parent width  the image will never shrink below the initial width of the parent <div>. If the <main>container or page width shrinks,
+    the <div>itself may shrink,
+    but the image won’t. The right part of the image is clipped because of overflow: hidden.
+
+    width: 100% of its parent width the image adjusts to the shrinking width of the parent <div> dynamically, always fitting fully within the parent, even when the page size changes. */
+}
+
+.short{
+grid-row: span 1;
+}
+.tall{
+grid-row: span 2;
+}
+
+@media screen and (max-width:960px){
+  main{
+    grid-template-columns: 1fr 1fr;
+    margin: 20px auto;
+    max-width: 800px;
+  }
+
+}
+@media screen and (max-width:620px){
+  main{
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 20px auto;
+  }
+
+
+  nav{
+    grid-template-columns: repeat(4, 1fr);
+  }
+  nav h1{
+    grid-column: 1/span 4;
+    grid-row: 1/2;
+  }
+}
